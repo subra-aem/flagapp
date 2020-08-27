@@ -1,0 +1,23 @@
+<div class="fms-projects" data-sly-use.api="org.subra.aem.flagapp.models.FMSModel">
+    <h2 class="text-center">${'Projects' @ i18n}</h2>
+    <ul class="list-group">
+        <li class="list-group-item" data-sly-repeat.project="${api.projects}">
+            <h4>
+                <span>
+					${project.title}
+					<sly data-sly-test.count="${project.flagsCount}"> (${count})</sly>
+				</span>
+                <span class="icons float-right" data-sly-test.name="${project.name}">
+					<em class="fa fa-trash delete-project" data-project-name="${name}" aria-hidden="true"></em>
+					<a href="${currentPage.path @ extension='html', selectors=name}?wcmmode=disabled">
+						<em class="fa fa-eye" aria-hidden="true"></em>
+					</a>
+				</span>
+            </h4>
+        </li>
+        <li class="list-group-item">
+            <input name="create-project" type="text" placeholder="Create New Project">
+            <em id="create-project" class="float-right fa fa-plus" aria-hidden="true"></em>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,45 @@
+/* fms-demo */
+.subra-jumbotron .jumbotron {
+	padding: 48px;
+}
+
+.scomponent-jumbotron_background-grey .jumbotron {
+	background-color: #e9ecef;
+}
+
+.scomponent-jumbotron_background-blue .jumbotron {
+	background-color: #4581b3;
+}
+
+.scomponent-jumbotron_text-white .jumbotron>* {
+	color: #fff;
+}
+
+.scomponent-jumbotron_text-black .jumbotron>* {
+	color: #000;
+}
+
+.fms-projects .fa {
+	padding: 0 10px;
+	font-size: 1.5rem;
+}
+
+.fms-projects #create-project {
+	margin-right: 3px;
+}
+
+.fms-projects .fa {
+	cursor: pointer;
+}
+
+.fms-projects input[name="create-project"] {
+	width: 88%;
+}
+
+.subra .container:first-child {
+	padding-right: 1vw;
+}
+
+.subra .container:last-child {
+	padding-left: 1vw;
+}

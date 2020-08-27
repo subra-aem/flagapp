@@ -1,0 +1,66 @@
+<div class="fms-content" data-sly-use.api="org.subra.aem.flagapp.models.FMSModel">
+    <div class="card-columns" data-sly-test.isProjectRequest="${api.project}">
+        <div class="card border-success new-flag-card">
+            <div class="card-header bg-transparent border-success">
+                <strong>Create New Flag: </strong>
+            </div>
+            <div class="card-body text-success">
+                <h5 class="card-title new-flag-title">
+                    <label for="new-flag-type">Title:</label>
+                    <input type="text" name="new-flag-title" placeholder="Flag Title" />
+                </h5>
+                <h5 class="card-title new-flag-value">
+                    <label for="new-flag-type">Value:</label>
+                    <input type="text" name="new-flag-value" placeholder="Flag Value" />
+                </h5>
+                <h5 class="card-title new-flag-type">
+                    <label for="new-flag-type">Type:</label> <select name="new-flag-type">
+						<option value="String" selected>String</option>
+						<option value="Boolean">Boolean</option>
+					</select>
+                </h5>
+            </div>
+            <div class="card-footer bg-transparentborder-success text-center">
+                <input type="submit" class="btn btn-success create-flag" value="Done">
+            </div>
+        </div>
+        <div class="card border-success flag-card" data-sly-repeat.flag="${api.flags}" data-flag-name="${flag.name}">
+            <div class="card-header bg-transparent border-success">
+                <strong>Actions: </strong>
+                <span class="action-icons float-right" data-flag-name="${flag.name}" data-flag-title="${flag.title}">
+					<span class="badge badge-success copy-flag-value">Copy-Value</span>
+                <span class="badge badge-secondary init-update">Update</span>
+                <span class="badge badge-warning update-flag d-none">Done</span>
+                <span class="badge badge-danger delete-flag">Delete</span>
+                </span>
+            </div>
+            <div class="card-body text-success">
+                <h5 class="card-title flag-title">
+                    <label for="flag-type">Title:</label>
+                    <input type="text" name="flag-title" value="${flag.title}" placeholder="Flag Title" disabled />
+                </h5>
+                <h5 class="card-title flag-value">
+                    <label for="flag-type">Value: </label>
+                    <input type="text" name="flag-value" value="${flag.value.toString}" placeholder="Flag Value" disabled />
+                </h5>
+                <h5 class="card-title flag-type">
+                    <label for="flag-type">Type:</label> <select name="flag-type" disabled>
+						<option value="String" selected="${!flag.boolean}">String</option>
+						<option value="Boolean" selected="${flag.boolean}">Boolean</option>
+					</select>
+                </h5>
+            </div>
+            <div class="card-footer bg-transparentborder-success">
+                <div data-sly-test.created="${flag.createdOn}">
+                    <strong>Created: </strong>${created}
+                </div>
+                <div data-sly-test.updated="${flag.updatedOn}">
+                    <strong>Updated: </strong> ${updated}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-sly-test="${!isProjectRequest || wcmmode.edit}">
+        <p>Please click on view icon of a project for accessing flags...</p>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.fms-content .card-body input,
+.fms-content .card-body select {
+    width: 80%;
+    float: right;
+}
+
+.fms-content .flag-card .action-icons {
+    cursor: pointer;
+}
