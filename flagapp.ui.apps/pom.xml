@@ -62,8 +62,12 @@
 					</embeddeds>
 					<subPackages>
 					</subPackages>
-					<!-- <dependencies> <dependency> <groupId>org.subra.aem</groupId> <artifactId>foundation.ui.apps</artifactId> 
-						</dependency> </dependencies> -->
+					<dependencies>
+						<dependency>
+							<groupId>org.subra.aem</groupId>
+							<artifactId>subra-aem-configs</artifactId>
+						</dependency>
+					</dependencies>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -119,11 +123,15 @@
 			<version>1.0.0</version>
 			<type>zip</type>
 		</dependency>
+		<dependency>
+			<groupId>org.subra.aem</groupId>
+			<artifactId>subra-aem-configs</artifactId>
+			<version>1.0.0</version>
+			<type>zip</type>
+		</dependency>
 
-	<!-- 	<dependency>
-			<groupId>com.adobe.aem</groupId>
-			<artifactId>aem-sdk-api</artifactId>
-		</dependency> -->
+		<!-- <dependency> <groupId>com.adobe.aem</groupId> <artifactId>aem-sdk-api</artifactId> 
+			</dependency> -->
 
 		<!-- HTL dependencies needed for the HTL Maven Plugin source code generation -->
 		<dependency>
